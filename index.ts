@@ -73,6 +73,58 @@ function multiplication(a: number, b: number, c?: number) {
 }
 
 multiplication(10, 12);
+
+
+//===================== class, inheritance and polymorphism=====================
+
+class Person {
+
+    name: string;
+    age: string;
+    email: string;
+
+    getContact() {
+        console.log('Name is: ', this.name.toUpperCase() + ' age is: ', this.age + ' email is: ', this.email);
+    }
+
+
+    constructor(name: string, age: string, email: string) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+    }
+}
+
+class Employee extends Person{
+
+    employeeId: string;
+    companyName: string;
+
+
+    constructor(name: string, age: string, email: string, employeeId: string, companyName: string) {
+        super(name, age, email);
+        this.employeeId = employeeId;
+        this.companyName = companyName;
+    }
+
+    getEmpInfo() {
+        console.log('Company name is: ', this.companyName.toLocaleUpperCase() + ' employee id is: ', this.employeeId);
+    }
+
+    getEmpName() {
+        console.log(super.name.toUpperCase())
+    }
+}
+
+// const person = new Person()
+const employee : Person = new Employee('Alauddin Tuhin', '25', 'altuhin@gmail.com', '1251', 'eGeneration Ltd');
+
+employee.getContact();
+// employee.getEmpInfo();
+// employee.getEmpName();
+
+
+
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>TypeScript Practice</h1>`;
 
