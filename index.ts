@@ -59,6 +59,20 @@ combineType(26, 25);
 combineType(true, true);
 
 console.log('the student role: ',student.role);
+
+
+//============== optional argument ============
+
+function multiplication(a: number, b: number, c?: number) {
+    if (typeof c === "undefined") {
+        c = 1;
+    }
+    // console.log('type is: ',typeof c === "undefined");
+    console.log('The value is: ',(a*b*c));
+    // console.log('The value of c is: ',c)
+}
+
+multiplication(10, 12);
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>TypeScript Practice</h1>`;
 
